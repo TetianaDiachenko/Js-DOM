@@ -144,7 +144,7 @@ function createMenuList() {
   menuList.innerHTML = temp;
 }
 
-function getContentFirstElement(item) {
+function getContent(item) {
   return content.innerHTML = `<h2 class="content__title">${item.title}</h2>
                               <div class="content__img">
                                   <img src="${item['img']}" alt=${item['imgAlt']}>
@@ -168,7 +168,7 @@ function getContentOnclick(target) {
 
   });
 
-    getContentFirstElement(turtleHtml);
+    getContent(turtleHtml);
 
 }
 
@@ -179,4 +179,4 @@ menu.addEventListener('click', (event) => {
 });
 
 createMenuList();
-getContentFirstElement(turtles[0]);
+getContent(turtles[0]);
