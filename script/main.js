@@ -143,7 +143,16 @@ function createMenuList() {
   });
   menuList.innerHTML = temp;
 }
-createMenuList();
+
+function getContentFirstElement(item) {
+  return content.innerHTML = `<h2 class="content__title">${item.title}</h2>
+                              <div class="content__img">
+                                  <img src="${item['img']}" alt=${item['imgAlt']}>
+                              </div>
+                              <p>${item['text'][0]}</p>
+                              <p>${item['text'][1]}</p>
+                              <p>${item['text'][2]}</p>`
+}
 
 function getContentOnclick(target) {
   const turtleHtml = turtles.find((turtle) => {
@@ -158,41 +167,8 @@ function getContentOnclick(target) {
     return target.innerText === turtle.title;
 
   });
-  console.log(turtleHtml);
-  content.innerHTML = 
-    `<h2 class="content__title">${turtleHtml.title}</h2>
-      <div class="content__img">
-          <img src="${turtleHtml['img']}" alt=${turtleHtml['imgAlt']}>
-      </div>
-      <p>${turtleHtml['text'][0]}</p>
-      <p>${turtleHtml['text'][1]}</p>
-      <p>${turtleHtml['text'][2]}</p>`
-  
-  // const title = document.createElement('h2');
-  //   title.classList.add('content__title');
-  //   title.textContent = turtleHtml['title'];
-  //   content.append(title);
 
-  //   const imgBlock = document.createElement('div');
-  //   imgBlock.classList.add('content__img');
-  //   content.append(imgBlock);
-
-  //   const img = document.createElement('img');
-  //   img.src = turtleHtml['img'];
-  //   img.alt = turtleHtml['imgAlt'];
-  //   imgBlock.append(img);
-
-  //   const pFirst = document.createElement('p');
-  //   pFirst.textContent = turtleHtml['text'][0];
-  //   content.append(pFirst);
-
-  //   const pSecond = document.createElement('p');
-  //   pSecond.textContent = turtleHtml['text'][1];
-  //   content.append(pSecond);
-
-  //   const pThird = document.createElement('p');
-  //   pThird.textContent = turtleHtml['text'][2];
-  //   content.append(pThird);
+    getContentFirstElement(turtleHtml);
 
 }
 
@@ -201,3 +177,6 @@ menu.addEventListener('click', (event) => {
     getContentOnclick(event.target);
   }
 });
+
+createMenuList();
+getContentFirstElement(turtles[0]);
