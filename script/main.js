@@ -125,68 +125,72 @@ const menu = document.querySelector('.menu');
 const content = document.querySelector('.content');
 
 
-function createMenuList(item) {
-    const menuList = document.createElement('ul');
-    menuList.classList.add('menu__list');
-    menu.append(menuList);
-
-    for (item in turtles) {
-        const menuItem = document.createElement('li');
-        menuItem.classList.add('menu__list-item');
-        menuItem.textContent = turtles[item]['title'];
-        menuList.append(menuItem);
-    }
+function createMenuList() {
+  const menuList = document.createElement('ul');
+  menuList.innerHTML = `<ul class="menu__list"></ul>`;
+  menu.append(menuList);
+    
+  let temp = "";
+  turtles.forEach((turtle) => {
+    temp += `<li class="menu__list-item">${turtle.title}</li>`;
+  });
+  menuList.innerHTML = temp;
 }
-
 createMenuList();
 
-function getContentOnclick(e) {
-    const event = e.target;
-    if (event.classList.contains('menu__list-item')) {
-        const menuItems = document.querySelectorAll('li');
-        menuItems.forEach((item, i) => {
-            if (event === item) {
-            menuItems[i].classList.add('active');
-            createContent(turtles[item]);       
-            } else {
-                menuItems[i].classList.remove('active');
-            }
-        })
-    }  
+function getContentOnclick(target) {
+  const turtleHtml = turtles.find((turtle) => {
+    const menuItems = document.querySelectorAll('li');
+    menuItems.forEach((item, i) => {
+      if (target === item) {
+        menuItems[i].classList.add('active');   
+      } else {
+        menuItems[i].classList.remove('active');
+        }
+      })
+    return target.innerText === turtle.title;
+
+  });
+  console.log(turtleHtml);
+  content.innerHTML = 
+    `<h2 class="content__title">${turtleHtml.title}</h2>
+      <div class="content__img">
+          <img src="${turtleHtml['img']}" alt=${turtleHtml['imgAlt']}>
+      </div>
+      <p>${turtleHtml['text'][0]}</p>
+      <p>${turtleHtml['text'][1]}</p>
+      <p>${turtleHtml['text'][2]}</p>`
+  
+  // const title = document.createElement('h2');
+  //   title.classList.add('content__title');
+  //   title.textContent = turtleHtml['title'];
+  //   content.append(title);
+
+  //   const imgBlock = document.createElement('div');
+  //   imgBlock.classList.add('content__img');
+  //   content.append(imgBlock);
+
+  //   const img = document.createElement('img');
+  //   img.src = turtleHtml['img'];
+  //   img.alt = turtleHtml['imgAlt'];
+  //   imgBlock.append(img);
+
+  //   const pFirst = document.createElement('p');
+  //   pFirst.textContent = turtleHtml['text'][0];
+  //   content.append(pFirst);
+
+  //   const pSecond = document.createElement('p');
+  //   pSecond.textContent = turtleHtml['text'][1];
+  //   content.append(pSecond);
+
+  //   const pThird = document.createElement('p');
+  //   pThird.textContent = turtleHtml['text'][2];
+  //   content.append(pThird);
+
 }
 
-const menuList = document.querySelector('ul');
-menuList.addEventListener('click', getContentOnclick);
-
-function createContent(item) {
-    const title = document.createElement('h2');
-    title.classList.add('content__title');
-    title.textContent = item['title'];
-    content.append(title);
-
-    const imgBlock = document.createElement('div');
-    imgBlock.classList.add('content__img');
-    content.append(imgBlock);
-
-    const img = document.createElement('img');
-    img.src = item['img'];
-    img.alt = item['imgAlt'];
-    imgBlock.append(img);
-
-    const pFirst = document.createElement('p');
-    pFirst.textContent = item['text'][0];
-    content.append(pFirst);
-
-    const pSecond = document.createElement('p');
-    pSecond.textContent = item['text'][1];
-    content.append(pSecond);
-
-    const pThird = document.createElement('p');
-    pThird.textContent = item['text'][2];
-    content.append(pThird);
-
-}
-
-createContent(turtles[0]);
-
-
+menu.addEventListener("click", (event) => {
+  if (event.target.closest(".menu__list-item")) {
+    getContentOnclick(event.target);
+  }
+});
