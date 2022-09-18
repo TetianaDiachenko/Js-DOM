@@ -82,7 +82,9 @@ const turtles = [
             in the 2012 animated series. Donnie often speaks in technobabble with a natural aptitude for science and technology. 
             His ninja skills are the lowest of the four turtles; as he relies on gadgets over combat skills. Like all of the brothers, 
             he is named after a Renaissance artist; in this case, he is named after Italian sculptor Donatello. 
-            He is the favorite turtle of co-creator Peter Laird, who served as the basis of Donatello's personality.`
+            He is the favorite turtle of co-creator Peter Laird, who served as the basis of Donatello's personality.`,
+
+            ``
         ]
     },
     {
@@ -104,7 +106,9 @@ const turtles = [
             he is named after an Italian Renaissance artist; in this case, he is named after Michelangelo Buonarroti. 
             His name was originally spelled "Michaelangelo" by the original creators, possibly misspelling his namesake's name wrong 
             by confusion with "Michael". In the Mirage comics, all four of the Turtles wear red masks, but to tell them apart, 
-            he was given an orange mask instead.`
+            he was given an orange mask instead.`,
+
+            ``
         ]
     },
     {
@@ -116,7 +120,10 @@ const turtles = [
             the Teenage Mutant Ninja Turtles comics and all related media. A mutant rat, he is the martial arts and ninjutsu instructor of 
             the Turtles, as well as their adoptive father. In some incarnations—including the original comics—he was the pet rat of 
             martial artist Hamato Yoshi (Japanese: 濱戸義), while in others he is a mutated or reincarnated Yoshi himself. 
-            The character was originally a parody of the Marvel Comics character Stick.`
+            The character was originally a parody of the Marvel Comics character Stick.`,
+
+            ``,
+            ``
         ]
     }
 ]
@@ -130,7 +137,7 @@ function createMenuList() {
   menuList.innerHTML = `<ul class="menu__list"></ul>`;
   menu.append(menuList);
     
-  let temp = "";
+  let temp = '';
   turtles.forEach((turtle) => {
     temp += `<li class="menu__list-item">${turtle.title}</li>`;
   });
@@ -189,8 +196,8 @@ function getContentOnclick(target) {
 
 }
 
-menu.addEventListener("click", (event) => {
-  if (event.target.closest(".menu__list-item")) {
+menu.addEventListener('click', (event) => {
+  if (event.target.closest('.menu__list-item')) {
     getContentOnclick(event.target);
   }
 });
