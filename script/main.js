@@ -17,8 +17,8 @@ const turtles = [
             In some European regions, the word "ninja" in the name was replaced with "hero" for its violent connotations. 
             Three live-action films were released; the first became the highest-grossing independent film up to that point. 
             In 2009, the franchise was purchased by Viacom, now Paramount Global. Viacom commissioned a new comic series, 
-            two new live-action films, and new animated series.`,
-    ],
+            two new live-action films, and new animated series.`
+    ]
   },
   {
     title: "Leonardo",
@@ -33,8 +33,8 @@ const turtles = [
             Leonardo is the leader, as well as the most mature and disciplined of the Turtles. Like his brothers, he is named 
             after an Italian Renaissance artist, in this case, Leonardo da Vinci. In the original comics, all four of 
             the Turtles wear red masks, but for the creators to tell them apart, 
-            he was written and redrawn to have an ocean-blue mask.`,
-    ],
+            he was written and redrawn to have an ocean-blue mask.`
+    ]
   },
   {
     title: "Raphael",
@@ -58,8 +58,8 @@ const turtles = [
             a Renaissance artist; in this case, he is named after the 16th-century Italian painter Raphael. 
             In 2011, Raphael placed 23rd on IGN's Top 100 Comic Book Heroes,[5] a list that did not feature any of his brothers. 
             He is the only Teenage Turtle brother whose name does not end in the letter "O", even though the artist he got his name 
-            from is "Raffaello".`,
-    ],
+            from is "Raffaello".`
+    ]
   },
   {
     title: "Donatello",
@@ -77,8 +77,8 @@ const turtles = [
             in the 2012 animated series. Donnie often speaks in technobabble with a natural aptitude for science and technology. 
             His ninja skills are the lowest of the four turtles; as he relies on gadgets over combat skills. Like all of the brothers, 
             he is named after a Renaissance artist; in this case, he is named after Italian sculptor Donatello. 
-            He is the favorite turtle of co-creator Peter Laird, who served as the basis of Donatello's personality.`,
-    ],
+            He is the favorite turtle of co-creator Peter Laird, who served as the basis of Donatello's personality.`
+    ]
   },
   {
     title: "Michelangelo",
@@ -99,8 +99,8 @@ const turtles = [
             he is named after an Italian Renaissance artist; in this case, he is named after Michelangelo Buonarroti. 
             His name was originally spelled "Michaelangelo" by the original creators, possibly misspelling his namesake's name wrong 
             by confusion with "Michael". In the Mirage comics, all four of the Turtles wear red masks, but to tell them apart, 
-            he was given an orange mask instead.`,
-    ],
+            he was given an orange mask instead.`
+    ]
   },
   {
     title: "Splinter",
@@ -111,9 +111,9 @@ const turtles = [
             the Teenage Mutant Ninja Turtles comics and all related media. A mutant rat, he is the martial arts and ninjutsu instructor of 
             the Turtles, as well as their adoptive father. In some incarnations—including the original comics—he was the pet rat of 
             martial artist Hamato Yoshi (Japanese: 濱戸義), while in others he is a mutated or reincarnated Yoshi himself. 
-            The character was originally a parody of the Marvel Comics character Stick.`,
-    ],
-  },
+            The character was originally a parody of the Marvel Comics character Stick.`
+    ]
+  }
 ];
 
 const menu = document.querySelector(".menu");
