@@ -121,7 +121,7 @@ const content = document.querySelector(".content");
 
 function createMenuList() {
   const menuList = document.createElement("ul");
-  menuList.innerHTML = `<ul class="menu__list"></ul>`;
+  menuList.classList.add("menu__list");
   menu.append(menuList);
   let temp = "";
   turtles.forEach((turtle) => {
